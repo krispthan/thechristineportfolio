@@ -1,26 +1,36 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import './App.scss';
+import  SignInForm  from './component/contact/index';
+import Preloader from './component/preloader/index';
+import Home from './component/home/index';
+import AboutMe from './component/aboutme/index';
+import Portfolio from './component/portfolio/index';
+import Skills from './component/skills/index';
 class App extends Component {
+
+  state = {
+    preloaderLoaded: false,
+    
+  }
+
+  preloaderHasLoader = () => {
+    this.setState({preloaderLoaded:true})
+  }
+
+  handleSignIn = values => {
+    console.log(values);
+  };
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+        <div className="container">
+          <Preloader hasPreloaderLoaded = {this.preloaderHasLoader}/>
+          <Home hasPreloaderLoaded = {this.state.preloaderLoaded}/>
+          <AboutMe/>
+          <Portfolio/>
+          <Skills/>
+          <SignInForm onSubmit={this.handleSignIn} />
+        </div>
     );
   }
 }

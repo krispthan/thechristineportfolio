@@ -1,0 +1,193 @@
+#preloader{
+    width: 100%;
+    position: fixed;
+    height: 100vh;
+    opacity: 1;
+    top:0;
+    right: 0;
+    background: #4c4d61;
+    z-index: 10000000;
+    .preloader-container{
+        position: relative;
+        top:25%;
+        @media only screen and (max-width:$laptop-size) {
+            top:10%;
+        }
+    }
+    #preloader-bkg{
+        background: #4c4d61;
+        transition: background 3s 1s;
+        position: absolute;
+        width:100%;
+        height: 100%;
+        top:0;
+        left:0;
+    }
+    .preloader-content{
+        position: relative;
+        text-align: center;
+        opacity:1;
+        transition:all 1s;
+        max-width: 500px;
+        margin:0 auto;
+
+        animation: preloader-scale 20s linear;
+        &:before{
+            border-right: $cloud-color 2px dashed;
+            border-radius: 121%;
+            position: absolute;
+            top: -34px;
+            animation: sun-spin 1s linear infinite reverse;
+            width: 500px;
+            height: 500px;
+            content: '';
+            left: 0;
+            right: 0;
+        }
+        &:after{
+            border-right: $cloud-color 2px dashed;
+            border-radius: 121%;
+            position: absolute;
+            top: -60px;
+            animation: sun-spin 1s linear infinite;
+            width: 550px;
+            height: 550px;
+            content: '';
+            left: -25px;
+        }
+        h6{
+            color:white;
+            animation: loading-pulse 1s ease infinite;
+        }
+        h1{
+            font-weight: 100;
+        }
+        #sun-and-clouds-container{
+            width:100%;
+            height:300px;
+            position: relative;
+            #preloader-sun-container{
+                position: absolute;
+                width: $sun-size;
+                height: $sun-size;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                bottom: 0;
+                animation:sun-rise 8s ease;
+                animation-fill-mode: forwards;
+                #preloader-sun{
+                    width:100%;
+                    height: 100%;
+                    animation:sun-spin 10s linear infinite;
+                    svg{
+                        width:100%;
+                        height: 100%;
+                        path{
+                            fill:$sun-color;
+                            stroke:white;
+                            stroke-width: $preloader-element-stroke;
+                        }
+                     
+                    }
+                }
+            }
+
+            #preloader-clouds{
+                position: absolute;
+                bottom:0;
+                width: 100%;
+                height: 100%;
+                .preloader-cloud{
+                    position: absolute;
+                    bottom: 0;
+                    svg{
+                        width:100%;
+                        height: 100%;
+                    }
+                    &#preloader-cloud-one{
+                        width:330px;
+                        height: 154px;
+                        left:0;
+                        animation:slide-cloud-one 8s ease;
+                        animation-fill-mode: forwards;
+                    }
+                    &#preloader-cloud-two{
+                        width:243px;
+                        height: 115px;
+                        left:0;
+                        animation:slide-cloud-two 8s ease;
+                        animation-fill-mode: forwards;
+                    }
+                    &#preloader-cloud-three{
+                        width:156px;
+                        height: 115px;
+                        right:0;
+                        animation:slide-cloud-three 8s ease;
+                        animation-fill-mode: forwards;
+                    }
+                    &#preloader-cloud-four{
+                        width:265px;
+                        height: 124px;
+                        right:0;
+                        animation:slide-cloud-four 8s ease;
+                        animation-fill-mode: forwards;
+
+                    }
+                }
+            }
+        }
+       
+        #preloader-name{
+            h1 {
+                color:white;
+                letter-spacing:1px;
+            }
+        }
+    }
+    &.start-preloader{
+
+        #preloader-bkg{
+            background: #25263c;
+            transition: background 3s;
+            opacity: 1;
+        }
+        .preloader-content{
+            opacity:0;
+            transition:all 1s;
+        }
+        
+    }
+    &.end-preloader{
+        opacity:1;
+        transform: translateY(-100vh);
+        transition:all 1.5s ease;
+        pointer-events: none;
+        .preloader-content{
+            &:after{
+                opacity: 0;
+                transition:all 1.5s ease;
+            }
+            &:before{
+                opacity: 0;
+                transition:all 1.5s ease;
+            }
+        }
+       
+    }
+    @media only screen  and (max-width:768px){
+        .preloader-container{
+            top:10%;
+            transform: scale(0.75);
+        }
+        .preloader-content{
+            &:after{
+                display: none;
+            }
+            &:before{
+                display: none;
+            }
+        }
+        
+    }
+}

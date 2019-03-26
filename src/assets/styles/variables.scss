@@ -1,0 +1,28 @@
+$preloader_h1_size: 3rem;
+$preloader_height: $preloader_h1_size;
+$preloader-gradient: rgba(black,0.9), rgba(black, 0.7); 
+
+$sun-size: 225px;
+$sun-color:#ffa152;
+$cloud-color:#dccdd3;
+$card-color:#f1f1f1f1;
+$preloader-element-stroke:3px;
+$laptop-size:1280px;
+$tablet-size:992px;
+$phablet-size:768px;
+$phone-size:350px;
+
+$fontMon:'Montserrat', sans-serif;
+$fontCrim:'Montserrat', sans-serif;
+//$fontCrim: 'Crimson Text', serif;
+$text-transform:uppercase;
+
+%filter{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: .4;
+    background: black;
+  }

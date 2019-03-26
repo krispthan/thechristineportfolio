@@ -1,0 +1,83 @@
+@keyframes sun-spin{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(359deg);
+    }
+}
+@keyframes sun-rise{
+    0%{
+        transform: translateY(0px);
+    }
+    100%{
+        transform: translateY(-90px);
+    }
+}
+@keyframes slide-cloud-one{
+    0%{
+        transform: translateX(50px);
+    }
+    100%{
+        transform: translateX(10px);
+    }
+}
+@keyframes slide-cloud-two{
+    0%{
+        transform: translateX(100px);
+    }
+    100%{
+        transform: translateX(40px);
+    }
+}
+@keyframes slide-cloud-three{
+    0%{
+        transform: translateX(-120px);
+    }
+    100%{
+        transform: translateX(-60px);
+    }
+}
+@keyframes slide-cloud-four{
+    0%{
+        transform: translateX(-50px);
+    }
+    100%{
+        transform: translateX(-30px);
+    }
+}
+@keyframes preloader-scale{
+    0%{
+        transform:scale(0.7);
+    }
+    5%{
+        transform:scale(0.75);
+    }
+    100%{
+        transform:scale(1);
+    }
+}
+@keyframes loading-pulse{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0.5 ;
+    }
+    100%{
+        opacity:1;
+    }
+}
+
+
+@keyframes contact-grow{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.5);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
